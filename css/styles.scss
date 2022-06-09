@@ -29,6 +29,14 @@
   font-family: 'Roboto', sans-serif;
 
 }
+html{
+  height: -webkit-fill-available;
+
+}
+body{
+  height: 100vh;
+  height: -webkit-fill-available;
+}
 
 // /* Remove default margin */
 // body,

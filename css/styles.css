@@ -19,6 +19,15 @@
   font-family: 'Roboto', sans-serif;
 }
 
+html {
+  height: -webkit-fill-available;
+}
+
+body {
+  height: 100vh;
+  height: -webkit-fill-available;
+}
+
 .scrollContainer {
   height: 100vh;
   width: 100vw;
