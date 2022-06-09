@@ -17,16 +17,6 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
-  overflow: hidden;
-}
-
-html {
-  height: -webkit-fill-available;
-}
-
-body {
-  height: 100vh;
-  height: -webkit-fill-available;
 }
 
 .scrollContainer {
