@@ -19,7 +19,6 @@ let closeUtility = document.getElementById("closeUtility"
 );
 
 function resize() {
-  scrollContainer.height = window.innerHeight
   console.log(window.innerHeight );
 }
 window.addEventListener("resize", resize)
