@@ -56,12 +56,17 @@ body {
   line-height: 1.5;
 }
 
-html, body {
-  padding: 0;
-  margin: 0;
-  height: 100vh;
-  /* fallback for Js load */
-  height: 100%;
+body {
+  min-height: 100vh;
+  min-height: -moz-available;
+  min-height: fill-available;
+  min-height: -webkit-fill-available;
+}
+
+html {
+  height: -moz-available;
+  height: fill-available;
+  height: -webkit-fill-available;
 }
 
 /* A elements that don't have a class get default styles */

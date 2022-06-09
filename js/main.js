@@ -19,7 +19,6 @@ let closeUtility = document.getElementById("closeUtility"
 );
 
 
-// define a function that sets min-height of my-element to window.innerHeight:
 
 
 
