@@ -18,7 +18,10 @@ let descriptionTextBox = document.getElementById("descriptionTextBox"
 let closeUtility = document.getElementById("closeUtility"
 );
 
-
+function resize() {
+  scrollContainer.style.height = window.innerHeight
+}
+window.addEventListener("resize", resize)
 
 
 
@@ -49,7 +52,7 @@ function createCard(params) {
       }
 
 function headerStyle() {
-        output.style.height="800px"
+        output.style.height="80vh"
         spinner.classList.remove("spinnerHide")
         output.style.opacity="0"
         container.style.height="100vh"

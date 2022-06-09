@@ -312,8 +312,9 @@ z-index: 10;
 }
 
 .output {
-    transition: 600ms ease-in-out;
-  overflow: scroll;
+  transition: 600ms ease-in-out;
+  // overflow-y: hidden;
+  // overflow-y: scroll;
 
   position: relative;
   padding: 0;
@@ -433,6 +434,9 @@ z-index: 10;
     visibility: visible !important;
   }
 }
+// output::-webkit-scrollbar{
+//   display: none;
+// }
 
 .bookDetailsPageUtility {
   height: 100%;
@@ -518,3 +522,8 @@ z-index: 10;
   width: 40vw;
 }
 
+@media only screen and (max-width: 600px) {
+  .output{
+    overflow-y: scroll;
+  }
+}

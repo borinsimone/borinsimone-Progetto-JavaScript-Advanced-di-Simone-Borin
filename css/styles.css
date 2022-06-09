@@ -284,7 +284,6 @@ body {
 .output {
   -webkit-transition: 600ms ease-in-out;
   transition: 600ms ease-in-out;
-  overflow: scroll;
   position: relative;
   padding: 0;
   width: 100vw;
@@ -525,5 +524,11 @@ body {
   opacity: 1 !important;
   z-index: 1000;
   width: 40vw;
+}
+
+@media only screen and (max-width: 600px) {
+  .output {
+    overflow-y: scroll;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
