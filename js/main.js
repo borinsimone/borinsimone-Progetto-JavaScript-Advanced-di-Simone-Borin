@@ -22,6 +22,7 @@ function resize() {
   scrollContainer.style.height = window.innerHeight
 }
 window.addEventListener("resize", resize)
+console.log(window.innerHeight );
 
 
 
