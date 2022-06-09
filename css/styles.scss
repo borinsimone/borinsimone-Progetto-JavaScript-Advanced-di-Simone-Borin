@@ -29,7 +29,14 @@
   font-family: 'Roboto', sans-serif;
 
 }
+html{
+  height: -webkit-fill-available;
 
+}
+body{
+  height: 100vh;
+  height: -webkit-fill-available;
+}
 
 // /* Remove default margin */
 // body,
@@ -511,16 +518,3 @@ z-index: 10;
   width: 40vw;
 }
 
-// @media only screen and (max-width: 768px) {
-//   body{
-//     height: 100vh;
-//     height: -webkit-fill-available;
-
-//   }
-//   html{
-//     height: -webkit-fill-available;
-//   }
-//   input{
-//     width: 300px;
-//   }
-// }
