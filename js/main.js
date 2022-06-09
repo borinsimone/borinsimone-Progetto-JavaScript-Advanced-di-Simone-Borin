@@ -138,6 +138,7 @@ searchBtn.addEventListener("click", function () {
 
 
 function getBooks(){
+  console.log("aicbsayuhdcb");
         input.value = input.value.replace(" ", '_');
         input.value = input.value.toLowerCase();
         console.log(input.value);
