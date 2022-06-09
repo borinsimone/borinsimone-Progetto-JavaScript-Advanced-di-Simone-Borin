@@ -164,8 +164,8 @@ body {
   text-align: center;
   border: none;
   border-radius: 5px 0px 0px 5px;
-  -webkit-transition: 700ms ease-in-out;
-  transition: 700ms ease-in-out;
+  -webkit-transition: 750ms ease-in-out;
+  transition: 750ms ease-in-out;
 }
 
 .header input:focus,
