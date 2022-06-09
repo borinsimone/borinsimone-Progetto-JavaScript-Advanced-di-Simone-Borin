@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta id="myViewport" name="viewport" content="whatever"> -->
+  <title>Progetto JavaScript Advanced di Simone Borin</title>
+  <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</head>
+<body>
+  <div class="scrollContainer">
+
+    
+
+    <!-- utility -->
+    <img  id="spinner" class="spinnerHide" src="img/Spinner.gif" alt="">
+    <div class="container" id="container">
+    <div class="bar barTop"></div>
+    <div class="bar barBot"></div>
+    <div class="bar barLeft"></div>
+    <div class="bar barRight"></div> 
+
+    <!-- front page -->
+
+
+    <div class="header" id="header">
+      <div class="searchBox">
+      <input id="input"  maxlength="15" placeholder="Search a category here"/>
+      <div class="searchBtn" id="searchBtn"><span class="material-symbols-outlined">
+      search</span></div>
+      <div class="vocalSubmit" id="vocalSubmit"><img src="https://img.icons8.com/external-xnimrodx-lineal-gradient-xnimrodx/64/000000/external-microphone-discussion-xnimrodx-lineal-gradient-xnimrodx.png"/>
+            <div class="utilityAnimationBtn"></div>
+      </div>
+    </div>
+
+    <div class="line" id="line"></div>
+    </div>
+
+    <!-- output -->
+    <div class="output" id="output"></div>
+
+
+    <!-- book description and utility -->
+
+    <div class="bookDetailsPageUtility" id="bookDetailsPageUtility">
+      <div class="bookDetailsPage" id="bookDetailsPage">
+        <div class="closeDetails" id="closeDetails">
+          &#10006;
+        </div>
+        <div class="bookDetails-content">
+          <div
+            class="descriptionTitle"
+            id="descriptionTitle">
+          </div>
+        <divclass="descriptionTextBox"
+          id="descriptionTextBox">
+        
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
