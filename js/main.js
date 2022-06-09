@@ -20,9 +20,9 @@ let closeUtility = document.getElementById("closeUtility"
 
 function resize() {
   scrollContainer.style.height = window.innerHeight
+  console.log(window.innerHeight );
 }
 window.addEventListener("resize", resize)
-console.log(window.innerHeight );
 
 
 
