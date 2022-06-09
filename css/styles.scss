@@ -56,12 +56,12 @@ body {
 }
 body {
     min-height: 100vh;
-    min-height: fill-available;
-    min-height: -webkit-fill-available;
+    min-height: fill-available !important;
+    min-height: -webkit-fill-available !important;
 }
 html {
-    height: fill-available;
-    height: -webkit-fill-available;
+    height: fill-available !important;
+    height: -webkit-fill-available !important;
 }
 
 /* A elements that don't have a class get default styles */
