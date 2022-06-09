@@ -164,8 +164,8 @@ body {
   text-align: center;
   border: none;
   border-radius: 5px 0px 0px 5px;
-  -webkit-transition: 750ms ease-in-out;
-  transition: 750ms ease-in-out;
+  -webkit-transition: 700ms ease-in-out;
+  transition: 700ms ease-in-out;
 }
 
 .header input:focus,
@@ -525,5 +525,11 @@ body {
   opacity: 1 !important;
   z-index: 1000;
   width: 40vw;
+}
+
+@media only screen and (max-width: 768px) {
+  input {
+    width: 300px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
