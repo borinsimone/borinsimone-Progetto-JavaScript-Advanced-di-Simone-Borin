@@ -18,14 +18,9 @@ let descriptionTextBox = document.getElementById("descriptionTextBox"
 let closeUtility = document.getElementById("closeUtility"
 );
 
-function resize() {
-  console.log(window.innerHeight );
-}
-window.addEventListener("resize", resize)
+let vh = window.innerHeight * 0.01;
 
-
-
-
+document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 
 function createCard(params) {

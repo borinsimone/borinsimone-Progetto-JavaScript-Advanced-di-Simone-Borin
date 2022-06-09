@@ -30,6 +30,7 @@ body {
 
 .scrollContainer {
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   width: 100vw;
   position: relative;
   max-height: 100vh;
