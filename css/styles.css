@@ -167,6 +167,7 @@ body {
   border-radius: 5px 0px 0px 5px;
   -webkit-transition: 700ms ease-in-out;
   transition: 700ms ease-in-out;
+  font-size: 1.1em;
 }
 
 .header input:focus,
