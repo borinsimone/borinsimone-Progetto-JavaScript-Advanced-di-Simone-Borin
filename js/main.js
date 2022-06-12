@@ -199,10 +199,29 @@ function getBooks(){
         card.classList.add("cardOn")
 
         detailsBtn.addEventListener("click", function () {
+        spinner.classList.remove("spinnerHide")
+
             fetch("https://openlibrary.org" +
                     Response.works[i].key +
                     ".json")
-            .then((b) => b.json())
+            // .then((b) => b.json())
+            
+
+
+
+.then((b) => {
+            if (b.status >= 200  && b.status <= 299) {
+              console.log(b.status);
+              console.log(typeof b);
+
+              return b.json();}})
+
+
+
+
+
+
+
             .then((bookData) => {
                 if (
                       typeof bookData.description.value ===
@@ -227,32 +246,42 @@ function getBooks(){
                 descriptionTitle.after(coverUtility)
                 coverUtility.style.backgroundImage = "url(https://covers.openlibrary.org/b/id/" + Response.works[i].cover_id +"-M.jpg)"
 
-                bookDetailsPage.classList.add(
-                  "bookDetailsPage-visible"
-                );
+                // bookDetailsPage.classList.add(
+                //   "bookDetailsPage-visible"
+                // );
+                bookDetailsPage.style.opacity="1";
+                bookDetailsPage.style.zIndex="99"
                 bookDetailsPageUtility.style.opacity="1";
                 bookDetailsPageUtility.style.zIndex="98"
+                spinner.classList.add("spinnerHide")
+
                 
         
                 
                 bookDetailsPageUtility.addEventListener("click", function () {
 
                   
-                    bookDetailsPage.classList.remove("bookDetailsPage-visible");
+                    // bookDetailsPage.classList.remove("bookDetailsPage-visible");
+                    bookDetailsPage.style.opacity="0";  
+                    bookDetailsPage.style.zIndex="-2"
+
                     bookDetailsPageUtility.style.opacity="0";
+                    bookDetailsPageUtility.style.zIndex="-3"
                     descriptionTitle.innerHTML = "";
                     coverUtility.remove();
                     descriptionTextBox.innerHTML = "";
-                    bookDetailsPageUtility.style.zIndex="-3"
                 });
                 closeDetails.addEventListener("click", function () {
 
-                    bookDetailsPage.classList.remove("bookDetailsPage-visible");
+                    // bookDetailsPage.classList.remove("bookDetailsPage-visible");
+                    bookDetailsPage.style.opacity="0";
+                    bookDetailsPage.style.zIndex="-2"
+
                     bookDetailsPageUtility.style.opacity="0";
+                    bookDetailsPageUtility.style.zIndex="-3"
                     descriptionTitle.innerHTML = "";
                     coverUtility.remove();
                     descriptionTextBox.innerHTML = "";
-                    bookDetailsPageUtility.style.zIndex="-3"
                     });
 
               function newFunction() {

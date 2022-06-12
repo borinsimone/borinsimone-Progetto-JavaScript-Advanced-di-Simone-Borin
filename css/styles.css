@@ -459,6 +459,8 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transition-delay: opacity 300ms;
+          transition-delay: opacity 300ms;
 }
 
 .bookDetailsPageUtility .bookDetailsPage {
@@ -468,7 +470,7 @@ body {
   min-width: 320px;
   position: relative;
   border-radius: 10px;
-  opacity: 1;
+  opacity: 0;
   font-size: 1.3rem;
   margin: 0;
   -webkit-backdrop-filter: blur(3px);
@@ -485,20 +487,13 @@ body {
 }
 
 .bookDetailsPageUtility .bookDetailsPage .descriptionTitle {
-  margin-bottom: 20px;
+  position: fixed;
+  letter-spacing: 2px;
   width: 100%;
   font-weight: 700;
   font-style: italic;
   font-size: 1.2em;
   border-bottom: 2px solid rgba(0, 0, 0, 0.514);
-}
-
-.bookDetailsPageUtility .bookDetailsPage .descriptionTextBox {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding-left: 20px;
-  overflow: scroll;
 }
 
 .bookDetailsPageUtility .coverUtility {
