@@ -54,7 +54,6 @@ function headerStyle() {
         container.style.height="100vh"
         container.style.width="100vw"
         headerTitle.style.opacity="0"
-        // removeSpaces()
         console.log( input.value);
         getBooks()
 }
@@ -62,8 +61,7 @@ function headerStyle() {
 input.addEventListener("keypress", function (e) {
         if (e.key === "Enter") {
         headerStyle()
-        // removeSpaces(input.value)
-        // console.log(input.value);
+        
         }
       });
 searchBtn.addEventListener("click", function () {
@@ -102,7 +100,6 @@ searchBtn.addEventListener("click", function () {
         var transcript = event.results[0][0].transcript;
         transcript=transcript.toLowerCase()
         input.value= transcript;
-        // console.log(input.value);
         headerStyle()
 
         getBooks()
@@ -206,7 +203,6 @@ function getBooks(){
             fetch("https://openlibrary.org" +
                     Response.works[i].key +
                     ".json")
-            // .then((b) => b.json())
             
 
 
@@ -248,9 +244,6 @@ function getBooks(){
                 descriptionTitle.after(coverUtility)
                 coverUtility.style.backgroundImage = "url(https://covers.openlibrary.org/b/id/" + Response.works[i].cover_id +"-M.jpg)"
 
-                // bookDetailsPage.classList.add(
-                //   "bookDetailsPage-visible"
-                // );
                 bookDetailsPage.style.opacity="1";
                 bookDetailsPage.style.zIndex="99"
                 bookDetailsPageUtility.style.opacity="1";
@@ -263,7 +256,6 @@ function getBooks(){
                 bookDetailsPageUtility.addEventListener("click", function () {
 
                   
-                    // bookDetailsPage.classList.remove("bookDetailsPage-visible");
                     bookDetailsPage.style.opacity="0";  
                     bookDetailsPage.style.zIndex="-2"
 
@@ -275,7 +267,6 @@ function getBooks(){
                 });
                 closeDetails.addEventListener("click", function () {
 
-                    // bookDetailsPage.classList.remove("bookDetailsPage-visible");
                     bookDetailsPage.style.opacity="0";
                     bookDetailsPage.style.zIndex="-2"
 
