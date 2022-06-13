@@ -184,7 +184,17 @@ z-index: 10;
   transition: 700ms ease-in-out;
   z-index: 5;
   box-shadow: 0px 19px 21px 5px var(--color-black-2);
+.headerTitle{
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  font-size: 2em;
+  position: absolute;
+  bottom: 20vh;
+  opacity: 1;
+  transition: 200ms ease-in-out;
+  color: #FFF;
 
+}
   .searchBox {
     position: relative;
     margin: 20px;
@@ -538,8 +548,11 @@ z-index: 10;
   }
 }
 
-@media only screen and (min-width: 769) {
+@media only screen and (min-width: 769px) {
   .scrollContainer{
-    height: 100vh;
+    height: 100vh !important ;
+  }
+  .descriptionTitle{
+    width: 90%;
   }
 }

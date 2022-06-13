@@ -144,6 +144,18 @@ body {
           box-shadow: 0px 19px 21px 5px var(--color-black-2);
 }
 
+.header .headerTitle {
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  font-size: 2em;
+  position: absolute;
+  bottom: 20vh;
+  opacity: 1;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  color: #FFF;
+}
+
 .header .searchBox {
   position: relative;
   margin: 20px;
@@ -546,9 +558,12 @@ body {
   }
 }
 
-@media only screen and (min-width: 769) {
+@media only screen and (min-width: 769px) {
   .scrollContainer {
-    height: 100vh;
+    height: 100vh !important;
+  }
+  .descriptionTitle {
+    width: 90%;
   }
 }
 /*# sourceMappingURL=styles.css.map */

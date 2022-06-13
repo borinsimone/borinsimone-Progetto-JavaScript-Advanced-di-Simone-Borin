@@ -1,6 +1,7 @@
 let spinner = document.getElementById("spinner");
 let scrollContainer = document.getElementById("scrollContainer");
 let container = document.getElementById("container");
+let headerTitle = document.getElementById("headerTitle");
 let searchBox = document.getElementById("searchBox");
 let input = document.getElementById("input");
 let searchBtn = document.getElementById("searchBtn");
@@ -52,6 +53,7 @@ function headerStyle() {
         output.style.opacity="0"
         container.style.height="100vh"
         container.style.width="100vw"
+        headerTitle.style.opacity="0"
         // removeSpaces()
         console.log( input.value);
         getBooks()
