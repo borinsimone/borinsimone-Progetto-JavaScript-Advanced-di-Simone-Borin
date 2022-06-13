@@ -477,7 +477,7 @@ body {
           backdrop-filter: blur(3px);
   overflow: hidden;
   z-index: 1000;
-  padding: 20px 35px;
+  padding: 20px 20px;
 }
 
 .bookDetailsPageUtility .bookDetailsPage .bookDetails-content {
@@ -485,6 +485,10 @@ body {
   height: 100%;
   width: 100%;
   position: relative;
+}
+
+.bookDetailsPageUtility .bookDetailsPage .bookDetails-content::-webkit-scrollbar {
+  display: none;
 }
 
 .bookDetailsPageUtility .bookDetailsPage .descriptionTitle {
@@ -499,6 +503,13 @@ body {
   border-bottom: 2px solid rgba(0, 0, 0, 0.514);
   -webkit-box-shadow: 0px 5px 15px 5px #FFFFFF;
           box-shadow: 0px 5px 15px 5px #FFFFFF;
+}
+
+.bookDetailsPageUtility .bookDetailsPage .descriptionTextBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
 }
 
 .bookDetailsPageUtility .coverUtility {
@@ -532,6 +543,12 @@ body {
 @media only screen and (max-width: 600px) {
   .output {
     overflow-y: scroll;
+  }
+}
+
+@media only screen and (min-width: 769) {
+  .scrollContainer {
+    height: 100vh;
   }
 }
 /*# sourceMappingURL=styles.css.map */

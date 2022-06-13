@@ -436,9 +436,7 @@ z-index: 10;
     visibility: visible !important;
   }
 }
-// output::-webkit-scrollbar{
-//   display: none;
-// }
+
 
 .bookDetailsPageUtility {
   height: 100%;
@@ -468,7 +466,7 @@ z-index: 10;
   backdrop-filter: blur(3px);
   overflow: hidden;
   z-index: 1000;
-  padding: 20px 35px;
+  padding: 20px 20px;
 
   
   
@@ -480,6 +478,9 @@ z-index: 10;
     position: relative;
     
     
+  }
+  .bookDetails-content::-webkit-scrollbar{
+    display: none;
   }
   .descriptionTitle {
     position: fixed;
@@ -496,10 +497,8 @@ z-index: 10;
      box-shadow: 0px 5px 15px 5px #FFFFFF;
   }
   .descriptionTextBox {
-    // height: fit-content;
-    // padding-left: 20px;
-    // overflow: scroll;
-    // margin-top: 6em;
+    display: flex;
+    width: 100%;
 
   }
   }
@@ -536,5 +535,11 @@ z-index: 10;
 @media only screen and (max-width: 600px) {
   .output{
     overflow-y: scroll;
+  }
+}
+
+@media only screen and (min-width: 769) {
+  .scrollContainer{
+    height: 100vh;
   }
 }
