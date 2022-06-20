@@ -14,7 +14,6 @@
 <body>
   <div class="scrollContainer">
 
-    
 
     <!-- utility -->
     <img  id="spinner" class="spinnerHide" src="img/Spinner.gif" alt="">
@@ -30,6 +29,10 @@
     <div class="header" id="header">
       <div class="headerTitle" id="headerTitle">find your book</div>
       <div class="searchBox">
+    <!-- <input class="reset" type="button"  onclick="window.location.reload(true)"> -->
+    <div class="reset" onclick="window.location.reload(true)">
+    <img id="resetCircle" src="img/reset-img.png " alt=""></div>
+
       <input id="input"  maxlength="15" placeholder="Search a category here"/>
       <div class="searchBtn" id="searchBtn"><span class="material-symbols-outlined">
       search</span></div>
@@ -49,10 +52,9 @@
 
     <div class="bookDetailsPageUtility" id="bookDetailsPageUtility">
       <div class="bookDetailsPage" id="bookDetailsPage">
-        <div class="closeDetails" id="closeDetails">
-          &#10006;
-        </div>
+
         <div class="bookDetails-content">
+          <div class="coverUtility" id="coverUtility"></div>
           <div
             class="descriptionTitle"
             id="descriptionTitle">

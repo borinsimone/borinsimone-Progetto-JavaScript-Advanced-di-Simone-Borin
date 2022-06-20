@@ -50,14 +50,12 @@ body {
 .scrollContainer #spinner {
   position: absolute;
   height: 100px;
+  opacity: 0;
   top: calc(55%);
   left: calc(50% - 50px);
   z-index: 1000;
-}
-
-.scrollContainer .spinnerHide {
-  opacity: 0 !important;
-  z-index: -1 !important;
+  -webkit-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
 }
 
 .closeUtilityActive {
@@ -170,13 +168,55 @@ body {
   transition: 700ms ease-in-out;
 }
 
-.header input {
+.header .reset {
+  height: 35px;
+  background-color: #fff;
+  aspect-ratio: 1;
+  z-index: 100001;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px 0px 0px 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header .reset img {
+  height: 25px;
+  opacity: .6;
+}
+
+.header .reset .animated {
+  -webkit-animation: spin 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          animation: spin 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: scale(1) rotate(360deg);
+            transform: scale(1) rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: scale(1) rotate(360deg);
+            transform: scale(1) rotate(360deg);
+  }
+}
+
+.header #input {
   height: 35px;
   width: 180px;
   text-transform: lowercase;
   text-align: center;
   border: none;
-  border-radius: 5px 0px 0px 5px;
   -webkit-transition: 700ms ease-in-out;
   transition: 700ms ease-in-out;
   font-size: 1.1em;
@@ -207,6 +247,7 @@ body {
           align-items: center;
   -webkit-transition: 300ms ease-in-out;
   transition: 300ms ease-in-out;
+  border-radius: 0px 5px 5px 0px;
 }
 
 .header .searchBtn:hover {
@@ -296,12 +337,11 @@ body {
 }
 
 .output {
-  -webkit-transition: 600ms ease-in-out;
-  transition: 600ms ease-in-out;
+  opacity: 0;
   position: relative;
   padding: 0;
   width: 100vw;
-  height: 0;
+  height: 0px;
   margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -314,6 +354,10 @@ body {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-transition: 700ms ease-in-out;
+  transition: 700ms ease-in-out;
+  -webkit-transition-delay: 700ms ease-in-out;
+          transition-delay: 700ms ease-in-out;
 }
 
 .output .card {
@@ -452,11 +496,19 @@ body {
   visibility: visible !important;
 }
 
+.outputVisible {
+  height: 80vh;
+}
+
+.output::-webkit-scrollbar {
+  width: 0 !important;
+}
+
 .bookDetailsPageUtility {
-  height: 100%;
+  height: 100vh;
   width: 100vw;
   opacity: 0;
-  z-index: -10000;
+  z-index: 1000;
   background-color: rgba(255, 255, 255, 0.26);
   top: 0;
   position: absolute;
@@ -471,8 +523,9 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-transition-delay: opacity 300ms;
-          transition-delay: opacity 300ms;
+  -webkit-transition: opacity 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
+  pointer-events: none;
 }
 
 .bookDetailsPageUtility .bookDetailsPage {
@@ -482,13 +535,11 @@ body {
   min-width: 320px;
   position: relative;
   border-radius: 10px;
-  opacity: 0;
   font-size: 1.3rem;
   margin: 0;
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
   overflow: hidden;
-  z-index: 1000;
   padding: 20px 20px;
 }
 
@@ -504,6 +555,7 @@ body {
 }
 
 .bookDetailsPageUtility .bookDetailsPage .descriptionTitle {
+  width: auto;
   position: fixed;
   letter-spacing: 2px;
   -webkit-backdrop-filter: blur(5px);
@@ -545,11 +597,14 @@ body {
   cursor: pointer;
 }
 
-.bookDetailsPage-visible {
-  pointer-events: initial;
-  opacity: 1 !important;
-  z-index: 1000;
-  width: 40vw;
+.pageFadeIn {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.pageFadeOut {
+  opacity: 0;
+  pointer-events: none;
 }
 
 @media only screen and (max-width: 600px) {

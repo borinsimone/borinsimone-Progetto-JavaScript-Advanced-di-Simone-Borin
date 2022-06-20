@@ -39,19 +39,21 @@ body{
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  
+
   #spinner{
     position: absolute;
     height: 100px;
+    opacity: 0;
     top: calc(55%);
     left: calc(50% - 50px);
     z-index: 1000;
+    transition: 300ms ease-in-out;
   }
-  .spinnerHide{
-    opacity: 0 !important;
-    z-index: -1 !important;
+  // .spinnerHide{
+  //   opacity: 0 !important;
+  //   // z-index: -1 !important;
 
-  }
+  // }
 }
 .closeUtilityActive {
   z-index: 100 !important;
@@ -125,14 +127,44 @@ z-index: 10;
     transition: 700ms ease-in-out;
   }
   
-
-  input {
+    .reset{
+      height: 35px;
+      background-color: #fff;
+      aspect-ratio: 1;
+      // position: absolute;
+      z-index: 100001;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px 0px 0px 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img{
+        height: 25px;
+        opacity: .6;
+        // &:hover{
+        //   transform: rotate(360deg);
+        //   transition: 700ms cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
+        // }
+      }
+      .animated{
+        animation: spin .7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      @keyframes spin {
+       
+        100%{
+          transform: scale(1) rotate(360deg) ;
+        }
+      }
+      
+  }
+  #input {
     height: 35px;
     width: 180px;
     text-transform: lowercase;
     text-align: center;
     border: none;
-    border-radius: 5px 0px 0px 5px;
+    // border-radius: 5px 0px 0px 5px;
     transition: 700ms ease-in-out;
     font-size: 1.1em ;
 
@@ -157,6 +189,8 @@ z-index: 10;
     justify-content: center;
     align-items: center;
     transition: 300ms ease-in-out;
+      border-radius: 0px 5px 5px 0px;
+
 
     &:hover {
       cursor: pointer !important;
@@ -244,23 +278,27 @@ z-index: 10;
 }
 
 .output {
-  transition: 600ms ease-in-out;
-
+  // transition: 600ms ease-in-out;
+  opacity: 0;
   position: relative;
   padding: 0;
   width: 100vw;
-  height: 0;
+  height: 0px;
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+
+  transition:   700ms ease-in-out ;
+  transition-delay:  700ms ease-in-out;
  
 
   .card {
     position: relative;
     visibility: hidden;
     color: rgb(255, 255, 255);
+    // background-color: #fff;
     height: 200px;
     width: 300px;
     padding: 30px 15px;
@@ -365,13 +403,16 @@ z-index: 10;
     visibility: visible !important;
   }
 }
-
+.outputVisible {
+  height: 80vh;
+}
+.output::-webkit-scrollbar { width: 0 !important }
 
 .bookDetailsPageUtility {
-  height: 100%;
+  height: 100vh;
   width: 100vw;
   opacity: 0;
-  z-index: -10000;
+  z-index: 1000;
   background-color: rgba(255, 255, 255, 0.26);
   top: 0;
   position: absolute;
@@ -379,7 +420,9 @@ z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition-delay: opacity 300ms;
+  transition: opacity 300ms ease-in-out;
+  pointer-events: none;
+  // transition-delay: opacity 300ms ease;
   
   
   .bookDetailsPage {
@@ -389,12 +432,12 @@ z-index: 10;
   min-width: 320px;
   position: relative;
   border-radius: 10px;
-  opacity: 0;
+  // opacity: 0;
   font-size: 1.3rem;
   margin: 0;
   backdrop-filter: blur(3px);
   overflow: hidden;
-  z-index: 1000;
+  // z-index: 1000;
   padding: 20px 20px;
 
   
@@ -412,6 +455,7 @@ z-index: 10;
     display: none;
   }
   .descriptionTitle {
+    width: auto;
     position: fixed;
     letter-spacing: 2px;
     backdrop-filter: blur(5px);
@@ -451,13 +495,19 @@ z-index: 10;
 
 
 
-.bookDetailsPage-visible {
 
-  pointer-events: initial;
-  opacity: 1 !important;
-  z-index: 1000;
-  width: 40vw;
+
+
+
+.pageFadeIn{
+  opacity: 1;
+  pointer-events: auto;
 }
+.pageFadeOut{
+  opacity: 0;
+  pointer-events: none;
+}
+
 
 @media only screen and (max-width: 600px) {
   .output{
