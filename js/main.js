@@ -27,22 +27,18 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 resetCircle.addEventListener("mouseover", () => {
     resetCircle.classList.add("animated")
-    console.log("ciao");
 })
 resetCircle.addEventListener("animationend", () => {    
     resetCircle.classList.remove("animated");
 })
 
 function headerStyle() {
-        // output.style.height="80vh"
-        // spinner.classList.remove("spinnerHide")
         output.innerHTML = "";
         output.classList.add("outputVisible");
         output.style.opacity="1"
         container.style.height ="100vh"
         container.style.width="100vw"
         headerTitle.style.opacity="0"
-        // getBooks()
 }
 input.addEventListener("keypress", function (e) {
         if (e.key === "Enter") {
@@ -79,20 +75,7 @@ recognition.onresult = function () {
         getBooks()
 
     }
-// const getDescription = async (responseKey, Response) => {
-//         try {
-//             const descrUrl = "https://openlibrary.org" +
-//                     responseKey +
-//                     ".json";
-//         const descRes = await fetch(descrUrl);
-//         console.log(descRes.ok);
-            
-//         } catch (error) {
-//             console.error(error);
-//         }
-//         console.log(Response);
-        
-//     }
+
 
 
 
@@ -155,24 +138,7 @@ recognition.onresult = function () {
       
         }
     }
-    
-    // function setText(bookData) {
-    //     console.log(bookData);
-    // }
-    // const setText  = async (bookData) => {
-    //     console.log(bookData);
 
-    // }
-
-    // function getBooks() {
-    //     input.value = input.value.replace(" ", '_');
-    //     input.value = input.value.toLowerCase();
-    //     console.log(input.value);
-    //     console.log();
-    // }
-        //  .addEventListener ("load", function () {
-        //         spinner.classList.remove("spinnerHide")
-        //     })
 
     let findDescription = async(chiave, Response,i)=> {
         console.log(chiave);
@@ -193,23 +159,14 @@ recognition.onresult = function () {
                 bookData.description;
             } else {
                 console.log(bookData.description.value);
-                // descriptionTitle.innerHTML =
-                // Response.works[i].title;
                 descriptionTextBox.innerHTML =
                 bookData.description.value;
             }
 
 
-                // let coverUtility = document.createElement("div");
-                // coverUtility.classList.add("coverUtility");
                 descriptionTitle.after(coverUtility)
                 coverUtility.style.backgroundImage = "url(https://covers.openlibrary.org/b/id/" + Response.works[i].cover_id +"-M.jpg)"
 
-                // bookDetailsPage.style.opacity="1";
-                // bookDetailsPage.style.zIndex="99"
-                // bookDetailsPageUtility.style.opacity="1";
-                // bookDetailsPageUtility,style.pointerEvents = "auto !important";
-                // bookDetailsPageUtility.style.zIndex="98"
                 bookDetailsPageUtility.classList.add("pageFadeIn")
                 bookDetailsPageUtility.classList.remove("pageFadeOut")
                 spinner.classList.add("spinnerHide")
@@ -242,7 +199,6 @@ bookDetailsPageUtility.addEventListener("click", function () {
 
     
     let getBooks= async ()=>{
-                // spinner.classList.remove("spinnerHide")
                 spinner.style.opacity="1"
                 input.value = input.value.replace(" ", '_');
                 input.value = input.value.toLowerCase();
@@ -254,12 +210,11 @@ bookDetailsPageUtility.addEventListener("click", function () {
                 input.value +
                 ".json?details=true";
             let res = await fetch(url);
+
             console.log(res.ok);
             let Response = await res.json();
             console.log(Response.work_count);
             if (Response.work_count !== 0 && res.ok) {
-                // throw "no book found"
-                // console.log(res);
                 headerStyle();
                 createCard(Response);
                 
@@ -272,14 +227,13 @@ bookDetailsPageUtility.addEventListener("click", function () {
             }
 
             }
+            
  
     catch(err){
         console.error(err);
     }
     finally{
-    // spinner.classList.add("spinnerHide")
     spinner.style.opacity="0"
-    // headerStyle()
     };
 
  
@@ -288,7 +242,51 @@ bookDetailsPageUtility.addEventListener("click", function () {
     }
 
 
-    
+    // let getBooks = async ()=> {
+    //         spinner.style.opacity="1";
+    //         input.value = input.value.replace(" ", '_');
+    //         input.value = input.value.toLowerCase();
+    //         output.style.opacity="0";
+    //     let response = await fetch("//openlibrary.org/subjects/" +
+    //                 input.value +
+    //                 ".json?details=true");
 
-    // getBooks().then((Response) => console.log(Response))
+    //     const reader = response.body.getReader();
+
+    //     // Step 2: get total length
+    //     const contentLength = +response.headers.get('Content-Length');
+
+    //     // Step 3: read the data
+    //     let receivedLength = 0; // received that many bytes at the moment
+    //     let chunks = []; // array of received binary chunks (comprises the body)
+    //     while(true) {
+    //     const {done, value} = await reader.read();
+
+    //     if (done) {
+    //         spinner.style.opacity="0";
+
+    //         break;
+    //     }
+
+    //     chunks.push(value);
+    //     receivedLength += value.length;
+
+    //     console.log(`Received ${receivedLength} of ${contentLength}`)
+    //     }
+
+    //     // Step 4: concatenate chunks into single Uint8Array
+    //     let chunksAll = new Uint8Array(receivedLength); // (4.1)
+    //     let position = 0;
+    //     for(let chunk of chunks) {
+    //     chunksAll.set(chunk, position); // (4.2)
+    //     position += chunk.length;
+    //     }
+
+    //     // Step 5: decode into a string
+    //     let result = new TextDecoder("utf-8").decode(chunksAll);
+
+    //     // We're done!
+    //     let Response = JSON.parse(result);
+    //     console.log(Response);
+    // }
 
