@@ -42,7 +42,6 @@ function headerStyle() {
         container.style.height ="100vh"
         container.style.width="100vw"
         headerTitle.style.opacity="0"
-        console.log( input.value);
         // getBooks()
 }
 input.addEventListener("keypress", function (e) {
@@ -56,17 +55,20 @@ getBooks()
       })
 
 let vocalSubmit = document.getElementById("vocalSubmit")
+vocalSubmit.addEventListener("click", function () {
+    recognition.start()
+})
 var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
 var recognition = new SpeechRecognition();
 recognition.onstart = function () {
       recognition.lang = 'en-US';
-        console.log("ascolto");
+        console.log("recognition started");
 
 
     }
 recognition.onspeechend = function () {
         recognition.stop();
-      console.log("non ascolto");
+      console.log("recognition stopped ");
     }
 recognition.onresult = function () {
         var transcript = event.results[0][0].transcript;
@@ -183,16 +185,16 @@ recognition.onresult = function () {
             let bookData = await Result.json();
             console.log(bookData.description);
 
+            descriptionTitle.innerHTML =
+            Response.works[i].title;
             if (typeof bookData.description.value === "undefined") {
                 console.log(bookData.description);
-                descriptionTitle.innerHTML =
-                Response.works[i].title;
                 descriptionTextBox.innerHTML =
                 bookData.description;
             } else {
                 console.log(bookData.description.value);
-                descriptionTitle.innerHTML =
-                Response.works[i].title;
+                // descriptionTitle.innerHTML =
+                // Response.works[i].title;
                 descriptionTextBox.innerHTML =
                 bookData.description.value;
             }
