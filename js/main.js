@@ -70,7 +70,6 @@ recognition.onresult = function () {
         var transcript = event.results[0][0].transcript;
         transcript=transcript.toLowerCase()
         input.value= transcript;
-        // headerStyle()
 
         getBooks()
 
@@ -108,30 +107,10 @@ recognition.onresult = function () {
                 Response.works[i].authors[0].name;
                 card.classList.add("cardOn")
                 
-                // console.log( Response.works[i].key);
                 detailsBtn.addEventListener("click", function () {
                     let chiave=  Response.works[i].key;
-                    // console.log(chiave);
               findDescription(chiave, Response, i)
-                // fetch("https://openlibrary.org" +
-                //     Response.works[i].key +
-                //     ".json").then((b)=>{
-                //        return b.json()
-                //     }).then((bookData) => {
-                //         console.log(bookData);
-                        // console.log( bookData.description );
-                        // if (typeof bookData.description.value === "undefined") {
-                        // desc = bookData.description;
-                        // // console.log(bookData.description );
-                            
-                        // } else {
-                        //     desc = bookData.description.value;
-                        //     // console.log(bookData.description.value );
-                        // }
-                        // console.log( bookData.description);
-                //         setText();
-                //         return bookData;
-                //     })
+       
 
     })
 
@@ -165,7 +144,7 @@ recognition.onresult = function () {
 
 
                 descriptionTitle.after(coverUtility)
-                coverUtility.style.backgroundImage = "url(https://covers.openlibrary.org/b/id/" + Response.works[i].cover_id +"-M.jpg)"
+                coverUtility.style.backgroundImage =  "url(https://covers.openlibrary.org/b/id/" + Response.works[i].cover_id +"-M.jpg)"
 
                 bookDetailsPageUtility.classList.add("pageFadeIn")
                 bookDetailsPageUtility.classList.remove("pageFadeOut")
@@ -222,7 +201,8 @@ bookDetailsPageUtility.addEventListener("click", function () {
 
 
             }else{
-                throw "no book found"
+             
+                throw "no book found";
 
             }
 
@@ -231,6 +211,10 @@ bookDetailsPageUtility.addEventListener("click", function () {
  
     catch(err){
         console.error(err);
+        input.value = "";
+        swal(
+            "Seems like you're looking for something that doesn't exist.."
+        );
     }
     finally{
     spinner.style.opacity="0"
@@ -242,51 +226,4 @@ bookDetailsPageUtility.addEventListener("click", function () {
     }
 
 
-    // let getBooks = async ()=> {
-    //         spinner.style.opacity="1";
-    //         input.value = input.value.replace(" ", '_');
-    //         input.value = input.value.toLowerCase();
-    //         output.style.opacity="0";
-    //     let response = await fetch("//openlibrary.org/subjects/" +
-    //                 input.value +
-    //                 ".json?details=true");
-
-    //     const reader = response.body.getReader();
-
-    //     // Step 2: get total length
-    //     const contentLength = +response.headers.get('Content-Length');
-
-    //     // Step 3: read the data
-    //     let receivedLength = 0; // received that many bytes at the moment
-    //     let chunks = []; // array of received binary chunks (comprises the body)
-    //     while(true) {
-    //     const {done, value} = await reader.read();
-
-    //     if (done) {
-    //         spinner.style.opacity="0";
-
-    //         break;
-    //     }
-
-    //     chunks.push(value);
-    //     receivedLength += value.length;
-
-    //     console.log(`Received ${receivedLength} of ${contentLength}`)
-    //     }
-
-    //     // Step 4: concatenate chunks into single Uint8Array
-    //     let chunksAll = new Uint8Array(receivedLength); // (4.1)
-    //     let position = 0;
-    //     for(let chunk of chunks) {
-    //     chunksAll.set(chunk, position); // (4.2)
-    //     position += chunk.length;
-    //     }
-
-    //     // Step 5: decode into a string
-    //     let result = new TextDecoder("utf-8").decode(chunksAll);
-
-    //     // We're done!
-    //     let Response = JSON.parse(result);
-    //     console.log(Response);
-    // }
-
+  
