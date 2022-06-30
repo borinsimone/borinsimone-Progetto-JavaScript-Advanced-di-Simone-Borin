@@ -618,6 +618,7 @@ body {
   }
   .descriptionTitle {
     width: 90% !important;
+    font-size: 1em !important;
   }
 }
 
