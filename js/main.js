@@ -120,6 +120,7 @@ recognition.onresult = function () {
 
 
     let findDescription = async(chiave, Response,i)=> {
+        spinner.style.opacity="1"
         console.log(chiave);
         try {
             let urlDesc="https://openlibrary.org" +
@@ -173,6 +174,10 @@ bookDetailsPageUtility.addEventListener("click", function () {
             return bookData;
         } catch (e) {
             console.error(e)
+            swal("No description available")
+        }finally{
+            spinner.style.opacity="0"
+
         }
     }
 
