@@ -548,6 +548,7 @@ body {
   overflow-y: scroll;
   height: 100%;
   width: 100%;
+  overflow-wrap: break-word;
 }
 
 .bookDetailsPageUtility .bookDetailsPage .bookDetails-content::-webkit-scrollbar {
