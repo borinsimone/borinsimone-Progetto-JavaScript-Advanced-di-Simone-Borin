@@ -173,8 +173,8 @@ bookDetailsPageUtility.addEventListener("click", function () {
 
             return bookData;
         } catch (e) {
-            console.error(e)
-            swal("No description available")
+            console.error(e);
+            swal("No description available");
         }finally{
             spinner.style.opacity="0"
 
