@@ -454,15 +454,14 @@ z-index: 10;
   }
   .descriptionTitle {
     width: 90%;
+    // position: fixed;
     letter-spacing: 2px;
     backdrop-filter: blur(5px);
     background-color: rgb(255, 255, 255);
     font-weight: 700;
     font-style: italic;
     font-size: 1.2em;
-    border-bottom: 2px
-     solid rgba(0, 0, 0, 0.514);
-  }
+   
   .descriptionTextBox {
     display: flex;
     width: 100%;
